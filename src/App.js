@@ -6,10 +6,10 @@ function App() {
 
     const [posts, setPosts] = useState(
         [
-            {id: 1, title: 'Sanek', descr: 'Sanek pidor'},
-            {id: 2, title: 'Tema', descr: 'Tema pidor'},
-            {id: 3, title: 'Pepa', descr: 'Pepa pidor'},
-            {id: 4, title: 'Til', descr: 'Til pidor'}
+            {id: 1, title: 'Sanek', descr: 'Sanek molodec'},
+            {id: 2, title: 'Tema', descr: 'Tema molodec'},
+            {id: 3, title: 'Pepa', descr: 'Pepa molodec'},
+            {id: 4, title: 'Til', descr: 'Til molodec'}
         ]
     )
 
