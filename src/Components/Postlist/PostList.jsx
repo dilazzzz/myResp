@@ -5,6 +5,7 @@ const PostList = ({posts, setPosts}) => {
     const deletePost = (id) => {
         setPosts(posts.filter(obj => obj.id !== id))
     }
+
     return (
         <div>
             {posts.map(post => {

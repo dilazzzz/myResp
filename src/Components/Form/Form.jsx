@@ -4,12 +4,11 @@ import Input from "./Inputs/input";
 import formStyles from './form.module.css'
 
 const Form = ({posts, setPosts}) => {
-
-    const[title, setTitle] = useState('')
-    const[descr, setDescr] = useState('')
+    const [title, setTitle] = useState('')
+    const [descr, setDescr] = useState('')
     const addNewPost = (e) => {
         e.preventDefault()
-        const newPost ={
+        const newPost = {
             id:Date.now(),
             title,
             descr
@@ -18,13 +17,12 @@ const Form = ({posts, setPosts}) => {
         setTitle('')
         setDescr('')
     }
-
     return (
         <div>
             <form action="myResp/src/Components/Form" className={formStyles.form}>
                 <Input
                     value={title}
-                    onChange={e => setTitle(e.target.value)}
+                    onChange={e => setTitle(e.target.value) }
                     type='text'
                     placeholder='Post title'
                 />
