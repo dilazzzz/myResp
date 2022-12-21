@@ -3,7 +3,7 @@ import sortStyles from './sort.module.css'
 
 const Sort = () => {
 
-    const [type, setType] = useState('choose sort')
+    const [type, setType] = useState('')
     const users =
         [
             {id: 1, label: 'Артем Кожанов', age: '27', grow: '180'},
@@ -11,30 +11,18 @@ const Sort = () => {
             {id: 3, label: 'Александр Полубнев', age: '26', grow: '188'}
         ]
 
-    const sortUsers = users.sort((a, b) => {
-        if (type === 'Alphabet A-Z') {
-            return a.label < b.label ? -1 : 1
-        }
-        if (type === 'Alphabet Z-A') {
-            return b.label < a.label ? -1 : 1
-        }
-        if (type === 'Age max-min') {
-            return  b.age - a.age
-        }
-        if (type === 'Age min-max') {
-            return  a.age - b.age
-        }
-        if (type === 'Growth max-min') {
-            return  b.grow - a.grow
-        }
-        if (type === 'Growth min-max') {
-            return  a.grow - b.grow
-        }
-    })
-
-    // const computed = useMemo(() => {
-    //     return StopOp(counter)
-    // },[counter])
+    const sortUsers = useMemo(() => {
+       return  users.sort((a, b) => {
+           switch (type) {
+               case 'Alphabet A-Z': return a.label < b.label ? -1 : 1
+               case 'Alphabet Z-A': return b.label < a.label ? -1 : 1
+               case 'Age max-min': return b.age - a.age
+               case 'Age min-max': return a.age - b.age
+               case 'Growth max-min': return b.grow - a.grow
+               case 'Growth min-max': return a.grow - b.grow
+           }
+        })
+    }, [type])
 
     return (
         <div>
